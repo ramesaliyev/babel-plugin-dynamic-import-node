@@ -1,5 +1,3 @@
 'use strict';
 
-var testModule = Promise.resolve().then(function () {
-  return require('test-module');
-});
+var testModule = require('test-module');

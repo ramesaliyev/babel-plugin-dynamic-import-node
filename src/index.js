@@ -2,7 +2,7 @@ import syntax from 'babel-plugin-syntax-dynamic-import';
 
 export default function ({ template, types: t }) {
   const buildImport = template(`
-    Promise.resolve().then(() => require(SOURCE))
+    require(SOURCE)
   `);
 
   return {
