@@ -1,13 +1,15 @@
-# babel-plugin-dynamic-import-node
+# babel-plugin-dynamic-import-to-require
 
-Babel plugin to transpile `import()` to a deferred `require()`, for node. Matches the [proposed spec](https://github.com/domenic/proposal-import-function).
+Well.. It seemed like a good idea at the beginning, but turned out it is not. Didn't solve my problem as well. But since i did it, it will stay here.
+
+Babel plugin to transpile `import()` to `require()`, for node.
 
 **NOTE:** Babylon >= v6.12.0 is required to correct parse dynamic imports.
 
 ## Installation
 
 ```sh
-$ npm install babel-plugin-dynamic-import-node --save-dev
+$ npm install babel-plugin-dynamic-import-to-require --save-dev
 ```
 
 ## Usage
@@ -18,34 +20,21 @@ $ npm install babel-plugin-dynamic-import-node --save-dev
 
 ```json
 {
-  "plugins": ["dynamic-import-node"]
+  "plugins": ["dynamic-import-to-require"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins dynamic-import-node script.js
+$ babel --plugins dynamic-import-to-require script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require('babel-core').transform('code', {
-  plugins: ['dynamic-import-node']
+  plugins: ['dynamic-import-to-require']
 });
 ```
 
-### Code Example
-```javascript
-Promise.all([
-  import('./lib/import1'),
-  import('./lib/import2')
- ]).then(([
-   Import1,
-   Import2
-  ]) => {
-   console.log(Import1);
-   /* CODE HERE*/
-  });
-```
