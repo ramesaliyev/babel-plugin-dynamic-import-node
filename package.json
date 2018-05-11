@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-dynamic-import-to-require",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Babel plugin to transpile import() to require()",
   "main": "lib/index.js",
   "directories": {
